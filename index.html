@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ORBITAL</title>
+  <link rel="stylesheet" href="/src/ui/style.css" />
+</head>
+<body>
+  <div id="menu">
+    <h1>ORBITAL</h1>
+    <p>Junior Astronaut Mission Trainer</p>
+   <p class="brief">Find and repair every damaged panel on the station before your oxygen runs out.</p>
+    <small>Mouse = look &nbsp;|&nbsp; W A S D = move &nbsp;|&nbsp; Space = up &nbsp;|&nbsp; Shift = down</small>
+  </div>
+
+  <div id="hud" class="hidden">
+    <!-- ===== HELMET VISOR (SVG) ===== -->
+    <svg id="visorSvg" viewBox="0 0 1600 900" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="rimGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2b313b" />
+          <stop offset="0.5" stop-color="#0c0f14" />
+          <stop offset="1" stop-color="#1a1e26" />
+        </linearGradient>
+        <linearGradient id="chinGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#4a5260" />
+          <stop offset="0.18" stop-color="#232832" />
+          <stop offset="1" stop-color="#06080b" />
+        </linearGradient>
+        <radialGradient id="tint" cx="50%" cy="48%" r="62%">
+          <stop offset="0.55" stop-color="#66ccff" stop-opacity="0" />
+          <stop offset="1" stop-color="#06284a" stop-opacity="0.5" />
+        </radialGradient>
+        <linearGradient id="glare1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ffffff" stop-opacity="0.42" />
+          <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+        </linearGradient>
+        <linearGradient id="glare2" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#ffffff" stop-opacity="0" />
+          <stop offset="0.5" stop-color="#cfeaff" stop-opacity="0.16" />
+          <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+        </linearGradient>
+        <radialGradient id="micFoam" cx="40%" cy="35%" r="70%">
+          <stop offset="0" stop-color="#5a6270" />
+          <stop offset="1" stop-color="#14181e" />
+        </radialGradient>
+        <radialGradient id="screw" cx="35%" cy="35%" r="70%">
+          <stop offset="0" stop-color="#8b95a5" />
+          <stop offset="1" stop-color="#1b1f26" />
+        </radialGradient>
+        <clipPath id="windowClip">
+          <path d="M150 440 C150 170 470 70 800 70 C1130 70 1450 170 1450 440 C1450 650 1250 770 800 770 C350 770 150 650 150 440Z" />
+        </clipPath>
+      </defs>
+
+      <!-- Glass: halka neela tint + curved glare (visor ke andar hi clip) -->
+      <g clip-path="url(#windowClip)">
+        <rect width="1600" height="900" fill="url(#tint)" />
+        <path d="M250 260 C330 160 520 105 720 92 C550 130 410 205 330 310 C300 345 242 305 250 260Z" fill="url(#glare1)" />
+        <path d="M1170 125 C1290 170 1380 250 1415 350 C1345 278 1265 210 1150 160Z" fill="url(#glare1)" opacity="0.7" />
+        <g id="glareBand">
+          <polygon points="520,70 610,70 390,770 300,770" fill="url(#glare2)" />
+        </g>
+      </g>
+
+      <!-- Helmet frame (beech mein window cut-out) -->
+      <path fill="url(#rimGrad)" fill-rule="evenodd"
+        d="M0 0H1600V900H0Z M150 440 C150 170 470 70 800 70 C1130 70 1450 170 1450 440 C1450 650 1250 770 800 770 C350 770 150 650 150 440Z" />
+      <path d="M150 440 C150 170 470 70 800 70 C1130 70 1450 170 1450 440 C1450 650 1250 770 800 770 C350 770 150 650 150 440Z"
+        fill="none" stroke="#9cf" stroke-opacity="0.18" stroke-width="12" />
+      <path d="M150 440 C150 170 470 70 800 70 C1130 70 1450 170 1450 440 C1450 650 1250 770 800 770 C350 770 150 650 150 440Z"
+        fill="none" stroke="#6b7686" stroke-width="3" />
+
+      <!-- Frame ke bolts -->
+      <g fill="url(#screw)" stroke="#05070a" stroke-width="1.5">
+        <circle cx="70" cy="70" r="10" /><circle cx="1530" cy="70" r="10" />
+        <circle cx="70" cy="830" r="10" /><circle cx="1530" cy="830" r="10" />
+      </g>
+
+      <!-- Chin guard -->
+      <path d="M0 900 L0 770 Q800 640 1600 770 L1600 900 Z" fill="url(#chinGrad)" />
+      <path d="M0 770 Q800 640 1600 770" fill="none" stroke="#9aa6b8" stroke-opacity="0.55" stroke-width="3" />
+      <path d="M0 815 Q800 690 1600 815" fill="none" stroke="#05070a" stroke-opacity="0.8" stroke-width="3" />
+      <path d="M0 858 Q800 740 1600 858" fill="none" stroke="#05070a" stroke-opacity="0.8" stroke-width="3" />
+      <g fill="#04060a">
+        <rect x="650" y="780" width="26" height="10" rx="5" /><rect x="692" y="778" width="26" height="10" rx="5" />
+        <rect x="734" y="776" width="26" height="10" rx="5" /><rect x="776" y="775" width="48" height="10" rx="5" />
+        <rect x="840" y="776" width="26" height="10" rx="5" /><rect x="882" y="778" width="26" height="10" rx="5" />
+        <rect x="924" y="780" width="26" height="10" rx="5" />
+      </g>
+      <g fill="url(#screw)" stroke="#05070a" stroke-width="1.5">
+        <circle cx="430" cy="800" r="8" /><circle cx="1170" cy="800" r="8" />
+      </g>
+      <text x="800" y="840" text-anchor="middle" font-size="22" letter-spacing="9" fill="#6b7686" font-family="Segoe UI, sans-serif">ORBITAL · EVA</text>
+
+      <!-- Side comms mic -->
+      <g id="mic">
+        <path d="M178 560 C240 575 300 610 350 640" fill="none" stroke="#12161c" stroke-width="14" stroke-linecap="round" />
+        <path d="M178 560 C240 575 300 610 350 640" fill="none" stroke="#5a6372" stroke-width="3" stroke-linecap="round" />
+        <ellipse cx="362" cy="647" rx="28" ry="18" fill="url(#micFoam)" stroke="#05070a" stroke-width="2" transform="rotate(25 362 647)" />
+        <circle cx="178" cy="560" r="17" fill="#171b22" stroke="#5a6372" stroke-width="2" />
+        <circle id="micLed" cx="178" cy="560" r="5" fill="#3f6" />
+        <text x="200" y="700" font-size="14" letter-spacing="3" fill="#7fe" fill-opacity="0.7" font-family="Segoe UI, sans-serif">COMMS · CH1</text>
+      </g>
+    </svg>
+
+    <!-- ===== HOLOGRAPHIC HUD ===== -->
+    <div id="holo">
+      <div class="holo top">
+        <div class="holo-label">MISSION TIMER</div>
+        <div id="timer">T+ 00:00</div>
+        <div id="task">Find the repair panels</div>
+        <div id="score"></div>
+      </div>
+
+      <div class="holo left">
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 100 100">
+            <circle class="ring-bg" cx="50" cy="50" r="40" />
+            <circle id="o2ring" class="ring-fg" cx="50" cy="50" r="40" transform="rotate(-90 50 50)" />
+          </svg>
+          <div class="ring-val" id="o2val">100%</div>
+        </div>
+        <div class="holo-label">OXYGEN</div>
+        <div class="holo-sub" id="o2time">05:00</div>
+      </div>
+
+      <div class="holo right fuel">
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 100 100">
+            <circle class="ring-bg" cx="50" cy="50" r="40" />
+            <circle id="fuelring" class="ring-fg" cx="50" cy="50" r="40" transform="rotate(-90 50 50)" />
+          </svg>
+          <div class="ring-val" id="fuelval">100%</div>
+        </div>
+        <div class="holo-label">JETPACK FUEL</div>
+        <div class="holo-sub">RCS ONLINE</div>
+      </div>
+    </div>
+
+    <div id="crosshair"></div>
+    <div id="marker">▼<span id="markerText"></span></div>
+    <div id="tune" class="hidden"></div>
+  </div>
+
+  <div id="resume" class="hidden">Click to resume the mission</div>
+  <div id="quiz" class="hidden"></div>
+  <div id="results" class="hidden"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

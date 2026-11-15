@@ -1,0 +1,130 @@
+{
+  "crack": [
+    {
+      "q": "About how many times does the ISS orbit Earth in one day?",
+      "options": ["1", "4", "16", "40"],
+      "answer": 2,
+      "fact": "The ISS travels at about 28,000 km/h and circles Earth roughly every 90 minutes, so astronauts see about 16 sunrises every day."
+    },
+    {
+      "q": "Why do astronauts float inside the ISS?",
+      "options": [
+        "There is no gravity there",
+        "They and the station are in continuous free fall around Earth",
+        "Magnets hold them in place",
+        "The air is too thin"
+      ],
+      "answer": 1,
+      "fact": "Gravity at the ISS's altitude is still about 90% of Earth's. Astronauts float because they and the station are constantly falling around Earth (free fall)."
+    },
+    {
+      "q": "At roughly what altitude does the ISS orbit Earth?",
+      "options": ["40 km", "400 km", "4,000 km", "40,000 km"],
+      "answer": 1,
+      "fact": "The ISS orbits at about 400 km above Earth, in a region called Low Earth Orbit."
+    },
+    {
+      "q": "Why does an astronaut need a spacesuit during a spacewalk (EVA)?",
+      "options": [
+        "Only for looks",
+        "Space has no air pressure and has extreme temperatures",
+        "It improves radio signals",
+        "It increases gravity"
+      ],
+      "answer": 1,
+      "fact": "Space is a vacuum with no air pressure. A spacesuit provides breathable oxygen, pressure and temperature control. In sunlight temperatures can exceed 120°C, and in shadow they can drop below -150°C."
+    }
+  ],
+  "debris": [
+    {
+      "q": "Why can even a tiny fleck of paint be dangerous in orbit?",
+      "options": [
+        "It is extremely hot",
+        "It travels at about 28,000 km/h, so a collision hits like a bullet or worse",
+        "It carries radiation",
+        "It sticks to things like a magnet"
+      ],
+      "answer": 1,
+      "fact": "Objects in Low Earth Orbit move at about 28,000 km/h. At that speed even a very small fragment can damage a satellite or a spacesuit."
+    },
+    {
+      "q": "What did NASA's OSIRIS-REx mission bring back to Earth?",
+      "options": [
+        "Martian soil",
+        "Moon rocks",
+        "A sample from the asteroid Bennu",
+        "Comet ice"
+      ],
+      "answer": 2,
+      "fact": "OSIRIS-REx launched in 2016, collected a sample from asteroid Bennu, and its capsule landed in Utah (USA) in September 2023. The sample weighed about 120 grams."
+    },
+    {
+      "q": "What is space debris?",
+      "options": [
+        "The tail of a comet",
+        "Old satellites, rocket parts and fragments circling Earth",
+        "Only meteorites",
+        "Moon dust"
+      ],
+      "answer": 1,
+      "fact": "Space debris is human-made junk: defunct satellites, spent rocket stages and fragments left over from collisions. It is a risk to new satellites and to astronauts."
+    },
+    {
+      "q": "What does Kessler Syndrome describe?",
+      "options": [
+        "A satellite running out of battery",
+        "So much debris from collisions that it causes even more collisions in orbit",
+        "The effect of a solar storm",
+        "A spacesuit tearing open"
+      ],
+      "answer": 1,
+      "fact": "In Kessler Syndrome, fragments from one collision cause further collisions, and the chain reaction keeps growing. Part of an orbit could become unusable."
+    }
+  ],
+  "airlock": [
+    {
+      "q": "What is the purpose of an airlock?",
+      "options": [
+        "To store the station's fuel",
+        "To let astronauts go outside and come back in without letting the whole station's air escape",
+        "To send radio signals",
+        "To purify water"
+      ],
+      "answer": 1,
+      "fact": "An airlock is a small chamber whose pressure can be changed. Astronauts enter it, close the inner door, let the air out and exit, so the rest of the station keeps its air."
+    },
+    {
+      "q": "Why do astronauts breathe pure oxygen before a spacewalk (pre-breathing)?",
+      "options": [
+        "To flush nitrogen out of the blood and avoid decompression sickness",
+        "To make their voices clearer",
+        "To make the suit feel lighter",
+        "To help them fall asleep"
+      ],
+      "answer": 0,
+      "fact": "Spacesuits run at a lower pressure than the station. Removing nitrogen from the blood beforehand lowers the risk of the bends (decompression sickness)."
+    },
+    {
+      "q": "What does the ICESat-2 satellite measure?",
+      "options": [
+        "Ocean salt levels",
+        "Ice sheet and land height, using lasers",
+        "Wind speed",
+        "The size of the Moon"
+      ],
+      "answer": 1,
+      "fact": "ICESat-2 (launched in 2018) fires laser pulses at Earth with its ATLAS instrument and times how long they take to return. This reveals very precisely how thick glaciers and ice sheets are."
+    },
+    {
+      "q": "If an astronaut's oxygen runs low, what should they do first?",
+      "options": [
+        "Keep drifting casually",
+        "Stop work and head straight for the airlock",
+        "Take off the helmet",
+        "Switch off the radio"
+      ],
+      "answer": 1,
+      "fact": "When oxygen runs low, an astronaut should stop everything and head straight for the airlock. That is why every spacewalk keeps a constant watch on remaining oxygen and distance to the airlock."
+    }
+  ]
+}
